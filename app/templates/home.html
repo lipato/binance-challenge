@@ -1,0 +1,184 @@
+<!doctype html>
+
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/grid.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/static/js/load-data.js"></script>
+    <title>George Lipatov::Technical challenge</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>George Lipatov::Technical challenge for Binance</h1>
+       <p class="lead">Assignment:<br>
+        - Use public market data from the SPOT API at https://api.binance.com<br>
+        - Binance API spot documentation is at https://github.com/binance-exchange/binance-official-api-docs/<br>
+        - All answers should be provided as source code written in either Go, Python, Java, Rust, and/or Bash.
+       </p>
+
+      <h3>1. Top 5 symbols for BTC by volume</h3>
+        <p>Print the top 5 symbols with quote asset BTC and the highest volume over the last 24 hours in descending order.</p>
+      <div class="row justify-content-md-center">
+        <div class="col-10">
+          <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Volume</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="top_symbols_btc">
+            <tr>
+              <th scope="col" colspan="3" class="text-center">
+            <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Sending a request to the API...
+            </button>
+              </th>
+            </tr>
+          </th>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h3>2. Top 5 symbols for USDT by trades</h3>
+        <p>Print the top 5 symbols with quote asset USDT and the highest number of trades over the last 24 hours in descending order.</p>
+      <div class="row justify-content-md-center">
+        <div class="col-10">
+           <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Count</th>
+            </tr>
+          </thead>
+           <tbody class="table-group-divider" id="top_symbols_usdt">
+            <tr>
+              <th scope="col" colspan="3" class="text-center">
+                <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Sending a request to the API...
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h3>3. Total Notional value of BTC by volume</h3>
+        <p>Using the symbols from Q1, what is the total notional value of the top 200 bids and asks currently on each order book?</p>
+      <div class="row justify-content-md-center">
+        <div class="col-10">
+          <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Bids</th>
+              <th scope="col">Asks</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="notional_value">
+            <tr>
+              <th scope="col" colspan="4" class="text-center">
+                <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Sending a request to the API...
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h3>4. Price Spread for USDT by count</h3>
+        <p>What is the price spread for each of the symbols from Q2?</p>
+      <div class="row justify-content-md-center">
+        <div class="col-10">
+          <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Price Spread</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="price_spread">
+            <tr>
+              <th scope="col" colspan="3" class="text-center">
+                <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Sending a request to the API...
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h3>5. Absolute Delta for USDT</h3>
+        <p>Every 10 seconds print the result of Q4 and the absolute delta from the previous value for each symbol.</p>
+      <div class="row justify-content-md-center">
+        <div class="col-10">
+          <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Symbol</th>
+              <th scope="col">Price Spread</th>
+              <th scope="col">Absolute Delta</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="spread_delta">
+            <tr>
+              <th scope="col" colspan="4" class="text-center">
+                <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Sending a request to the API...
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+      <h3>6. output of Q5 by querying Prometheus Metrics</h3>
+      <p>Make the output of Q5 accessible by querying <a href="/metrics">http://localhost:8080/metrics</a> using the Prometheus Metrics format.</p>
+      <div class="row justify-content-md-center">
+        <div class="col-10">
+          <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Response</a></th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="prometheus">
+            <tr>
+              <th scope="col" colspan="4" class="text-center">
+                <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Sending a request to the API...
+                </button>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
