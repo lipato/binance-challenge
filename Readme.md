@@ -4,8 +4,8 @@
 Hi. This project is my technical challenge. Code is located at https://github.com/lipato/binance-challenge.
 The Backend of project is written in Python/Flask and frontend is implemented on the Bootstrap framework using the Flask templating engine.
 The infrastructure as a code prepared with Terraform and for testing deployed to AWS Cloud in ECS Cluster (Fargate).
-Code of infrastructure is located in the folder https://github.com/lipato/binance-challenge/iac 
-
+Code of infrastructure is located in the folder https://github.com/lipato/binance-challenge/tree/master/iac/account 
+A working sample of application you can find here https://binance-challenge.lipato.dev
 ---
 **Assignment**:
 - Use public market data from the SPOT API at https://api.binance.com
@@ -23,12 +23,7 @@ Code of infrastructure is located in the folder https://github.com/lipato/binanc
 
 ---
 
-
-
-
 I will be glad to hear your comments!!
-
-A working sample application you can find here https://binance-challenge.lipato.dev
 
 My LinkedIn account https://www.linkedin.com/in/lipato/
 
