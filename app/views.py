@@ -9,6 +9,9 @@ client = ApiClient()
 def template():
     return render_template('home.html')
 
+@app.route('/health')
+def health():
+    return 'app is healthy'
 
 @app.route('/top_symbols', methods=['GET'])
 def top_symbols():
