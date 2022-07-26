@@ -32,3 +32,17 @@ My LinkedIn account https://www.linkedin.com/in/lipato/
 ```hcl
 George.Lipatov
 ```
+---
+**Usefull commands:**
+
+###### _How to start python application?_
+```hcl
+pip install -r requirements.txt
+python3 -m gunicorn -b 0.0.0.0:8080 wsgi:app
+```
+
+###### _How to build docker container and run it?_
+```hcl
+docker build -t binance-challenge .
+docker run -d -p 8080:8080 —name=binance-challenge-container binance-challenge
+```
