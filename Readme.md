@@ -5,8 +5,7 @@
 Hi. This project is my technical challenge. Code is located at https://github.com/lipato/binance-challenge.
 The Backend of project is written in Python/Flask and the frontend is implemented on the Bootstrap framework using the Flask templating engine.
 Infrastructure as a code prepared with Terraform and deployed for testing in the AWS Cloud on ECS (Fargate) cluster.
-The infrastructure code is located at https://github.com/lipato/binance-challenge/tree/master/iac/account 
-A working sample application can be found here https://binance-challenge.lipato.dev
+The infrastructure code is located at https://github.com/lipato/binance-challenge/tree/master/iac/account
 
 ---
 **Assignment**:
@@ -35,7 +34,7 @@ George.Lipatov
 ---
 **Usefull commands:**
 
-###### _How to start python application?_
+###### _How to start this python application?_
 ```hcl
 pip install -r requirements.txt
 python3 -m gunicorn -b 0.0.0.0:8080 wsgi:app
